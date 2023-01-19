@@ -1,0 +1,17 @@
+<div id="<%= dom_id pin %>">
+  <p>
+    <strong>Title:</strong>
+    <%= pin.title %>
+  </p>
+
+  <%= pin.body %>
+<br/>
+<%= link_to image_tag(pin.image, style:"width:150px; height:150px"), pin.image if pin.image.attached? %>
+<!-- link_to helps to view image when click on it, style help resizing image  -->
+<hr />
+<% pin.pictures.each do |picture| %>
+<%= link_to image_tag(picture, style:"width:150px; height:150px"), picture %>
+<% end %>
+
+
+</div>
